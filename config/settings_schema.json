@@ -1,0 +1,62 @@
+[
+  {
+    "name": "doc_example",
+    "settings": [
+      {
+        "type": "header",
+        "content": "My settings"
+      },
+      {
+        "type": "text",
+        "id": "my_id",
+        "label": "My setting label",
+        "default": "Enter text here"
+      },
+      {
+        "type": "textarea",
+        "id": "my_second_id",
+        "label": "Welcome message",
+        "default": "Welcome to my shop!"
+      }
+    ]
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_page_bg",
+        "label": "Page background",
+        "default": "aquamarine"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Background Color",
+        "default": "aquamarine"
+      }
+    ]
+  },  
+  {
+    "name": "collectionList",
+    "settings": [
+      {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections",
+        "limit": 8
+      }
+    ]
+  },
+  {
+    "name": "checkbox",
+    "settings":[
+      {
+        "type": "checkbox",
+        "id": "show_search",
+        "label": "Show search form?",
+        "default": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+{% paginate search.results by 1 %}  
+
+    {% if search.performed %}
+
+        <h1>Here are your results</h1>
+    
+        {% for item in search.results %}
+            {% if item.object_type == "page" %}
+                <p>hello page</p>
+                <a href="{{ item.url }}">
+                    <h3>
+                        {{ item.title }}
+                    </h3>
+                    <p>
+                        {{ item.content | highlight: search.terms }}
+                    </p>
+                </a>
+            {% elsif item.object_type == "article" %}
+                <p>hello article</p>
+
+                <a href="{{ item.url }}">
+                    <h3>
+                        {{ item.title }}
+                    </h3>
+                    <img src="{{ item.featured_image |  image_url: width: 300 }}" alt="image of item" />
+                    <p>
+                        {{ item.content | highlight: search.terms }}
+                    </p>
+                </a>
+            {% else %}
+
+            <a href="{{ item.url }}">
+                <h3>
+                    {{ item.title }}
+                </h3>
+                <img src="{{ item.featured_image |  image_url: width: 300 }}" alt="image of item" />
+            </a>
+            <p>
+                {{ item.content | highlight: search.terms }}
+            </p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+    <h1>No results were found.</h1>
+
+    {% endif %}
+{{ paginate | default_pagination }}
+
+{% endpaginate %}
+
+   

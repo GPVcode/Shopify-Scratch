@@ -1,0 +1,27 @@
+<header class=".nav-container">
+    <div class="nav">
+        <div class="logo">
+        <img src="{{ 'Loki.png' | asset_img_url }}" alt="Logo of Loki">
+        <h1>{{ shop.name }}</h1>
+        </div>
+        <ul class="nav-list">
+            <li>
+                {% for link in linklists.main-menu.links -%}
+                    {{ link.title | link_to: link.url }}
+                {%- endfor %}
+            </li>
+        </ul>
+    </div>    
+
+    {% if settings.show_search %}
+        <form action="/search">
+            <input type="search"
+                placeholder="Search"
+                name="q"
+                value="{{ search.terms | escape }}"
+            >
+            <input type="submit" value="Search">
+        </form>
+    {% endif %}
+
+</header>

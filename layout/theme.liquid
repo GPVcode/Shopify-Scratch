@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ content_for_header }}
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+    <link href="https://fonts.cdnfonts.com/css/rushford-clean" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shopify store for purchase of serviceable villains."/>
+    <title>Buy A Villain</title>
+</head>
+<body>
+
+    {% section 'header.liquid' %}
+    {{ content_for_layout }}
+    {% comment %} <script src="{{ 'scripts.js' | asset_url }}"></script> {% endcomment %}
+</body>
+</html>
